@@ -2,7 +2,10 @@ const path = require('path');
 
 function init(app) {
   app.get('*', function(req, res) {
-    console.log(req.query.id); // Will log ?id= if exists
+    if(req.query.id) {
+      console.log(req.query.id); // Will log ?id= if exists
+    }
+
     res.sendFile(path.join(__dirname, '../../public/index.html'));
   });
 
