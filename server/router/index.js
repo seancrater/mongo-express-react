@@ -1,11 +1,7 @@
 const path = require('path');
 
 function init(app) {
-  app.get('*', function(req, res) {
-    if(req.query.id) {
-      console.log(req.query.id); // Will log ?id= if exists
-    }
-
+  app.get('/', function(req, res) {
     res.sendFile(path.join(__dirname, '../../public/index.html'));
   });
 
