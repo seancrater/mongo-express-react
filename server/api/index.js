@@ -6,12 +6,8 @@ function init(app) {
   mongoose.connect('mongodb://user:pass@ds149603.mlab.com:49603/seancraterblogtest', {
     useMongoClient: true
   }).then(
-    () => {
-      console.log('DB connected')
-    },
-    err => {
-      console.log(err);
-    }
+    () => { console.log('Connected') },
+    err => { console.log(err) }
   );
 
   routes.init(app);

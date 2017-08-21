@@ -5,7 +5,10 @@ function init(app) {
     const title = req.query.title;
 
     if(title) {
-      Post.create({title: title});
+      Post.create({
+        title: title,
+        timestamp: new Date().toLocaleString()
+      });
     }
 
     res.jsonp({title});

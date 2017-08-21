@@ -8,5 +8,5 @@ const app = express();
 const config = (process.env.NODE_ENV === 'prod') ? require('../webpack.config.production') : require('../webpack.config');
 
 webpack.init(app, config);
-router.init(app);
 api.init(app);
+router.init(app);
