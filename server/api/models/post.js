@@ -7,14 +7,10 @@ const postSchema = mongoose.Schema({
 
 const Post = mongoose.model('Post', postSchema);
 
-function create(...postData) {
-  const newPost = new Post(...postData);
-  newPost.save(function (err) {
-    if (err) return console.error(err);
-    console.log('Added')
-  });
+function model() {
+  return Post;
 }
 
 module.exports = {
-  create
+  model
 }
